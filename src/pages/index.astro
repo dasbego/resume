@@ -1,26 +1,19 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-
-import About from "@/components/sections/About.astro"
-import Education from "@/components/sections/Education.astro"
-import Experience from "@/components/sections/Experience.astro"
-import Hero from "@/components/sections/Hero.astro"
-import Projects from "@/components/sections/Projects.astro"
-import Skills from "@/components/sections/Skills.astro"
 import KeyboardManager from "@/components/KeyboardManager.astro"
+import ResumeApp from "@/components/ResumeApp"
+import cvEs from "../../public/cv.json"
+import cvEn from "../../public/cv.en.json"
+import type { CV } from "@/cv.d"
 
-import { basics } from "@cv"
-const { name, label } = basics
+const cvEsTyped = cvEs as unknown as CV
+const cvEnTyped = cvEn as unknown as CV
+const { name, label } = cvEsTyped.basics
 ---
 
-<Layout title={`Portafolio de ${name} - ${label}`}>
+<Layout title={`${name} - ${label}`}>
   <main>
-    <Hero />
-    <About />
-    <Experience />
-    <Education />
-    <Projects />
-    <Skills />
+    <ResumeApp cvEs={cvEsTyped} cvEn={cvEnTyped} client:load />
   </main>
 
   <KeyboardManager />

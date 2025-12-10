@@ -4,7 +4,7 @@ import Section from "../Section.astro"
 import { work } from "@cv"
 ---
 
-<Section title="Experiencia laboral">
+<Section title="Experiencia laboral" data-section="experience">
   <ul>
     {
       work.map(
@@ -38,32 +38,38 @@ import { work } from "@cv"
   </ul>
 </Section>
 
+<!-- 
+  NOTE: This component is not currently used. 
+  Styles have been moved to ResumeContent.css for the Preact component.
+  Keeping this file for reference but styles are disabled to avoid conflicts.
+-->
 <style>
-  ul {
+  /* Styles disabled - using ResumeContent.css instead */
+  /* :global(section[data-section="experience"] ul) {
     display: flex;
     flex-direction: column;
     gap: 32px;
   }
 
-  article h3 {
+  :global(section[data-section="experience"] article h3) {
     font-weight: 500;
     color: #111;
   }
 
-  article h4 {
+  :global(section[data-section="experience"] article h4) {
     color: #222;
     font-weight: 400;
   }
 
-  header {
+  :global(section[data-section="experience"] header) {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 4px;
   }
 
-  time {
+  :global(section[data-section="experience"] time) {
     color: #555;
     font-size: 0.85rem;
-  }
+  } */
 </style>

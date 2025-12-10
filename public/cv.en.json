@@ -1,0 +1,521 @@
+{
+  "basics": {
+    "name": "Guillermo Beltrán",
+    "label": "Senior Front-End Engineer / Tech Lead",
+    "image": "/preview_resume_photo.png",
+    "email": "gbego91@gmail.com",
+    "phone": "+52 5544491603",
+    "url": "https://begodev.io",
+    "summary": "Front-End Engineer with over 10 years of experience building and leading web applications for high-traffic SaaS, classifieds and travel platforms. Strong background in React, performance optimization, analytics integration, and data compliance. Proven record in leading migrations, improving product observability, and enabling measurable business growth. Passionate about scalable architectures, user-centric design, and cross-functional collaboration within product-driven teams.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Mexico City",
+      "countryCode": "MX",
+      "region": "Mexico"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "begodev",
+        "url": "https://github.com/dasbego"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "guillermo-beltran",
+        "url": "https://linkedin.com/in/guillermo-beltran"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Distillery (Rocketmiles by RocketTravel)",
+      "position": "Tech Lead / Senior Front-End Engineer",
+      "url": "https://www.rocketmiles.com",
+      "startDate": "2021-01-01",
+      "endDate": null,
+      "summary": "Led the migration of a legacy AngularJS 1.8 webapp to React, improving development, maintainability and user experience for over millions of daily users across major airline partners. Spearheaded the Webpack to Vite migration, cutting build times by 30+ minutes and streamlining the CI/CD pipeline.",
+      "highlights": [
+        "Led the migration of AngularJS 1.8 to React for millions of daily users",
+        "Webpack to Vite migration, cutting build times by 30+ minutes",
+        "Led the design, architecture, and implementation of a cross-sell widget in collaboration with partner teams",
+        "Successfully launched and integrated the solution across multiple partner websites",
+        "Enabled users to book hotels post-flight checkout, driving more than a thousand additional daily bookings with measurable revenue growth",
+        "Developed partner-facing dashboards with Snowplow and real-time visualizations via Grafana for internal alerts",
+        "Cut reporting latency from 4 hours to real-time, improving partner visibility and decision-making",
+        "Implemented Datadog RUM for front-end observability and error tracking",
+        "Introduced structured logging and alerting workflows for early issue detection",
+        "Owned cookie consent compliance using OneTrust: maintained consent banners, led semi-annual audits per partner, and managed cookie categories for CCPA and GDPR alignment",
+        "Collaborated cross-functionally with product, design, backend, and analytics teams to define API contracts, set tracking standards",
+        "Ran over 20 A/B experiments (90% success rate)",
+        "Mentored 2-3 front-end engineers per squad, leading planning, reviews, and technical design with a focus on open collaboration"
+      ]
+    },
+    {
+      "name": "Parallel Staff (Intrado Project)",
+      "position": "Senior Front-End Engineer",
+      "url": "",
+      "startDate": "2020-01-01",
+      "endDate": "2021-03-01",
+      "summary": "Led front-end development for a video-first meeting platform, delivering key features such as custom branding, multi-monitor previews, screen sharing, and participant management.",
+      "highlights": [
+        "Optimized the web client performance, enabling meetings to support up to 300% more participants",
+        "Extended compatibility to mobile browsers",
+        "Reduced CPU and memory usage for a smoother, more reliable user experience"
+      ]
+    },
+    {
+      "name": "Wizeline",
+      "position": "Software Engineer II",
+      "url": "https://www.wizeline.com",
+      "startDate": "2018-10-01",
+      "endDate": "2020-03-01",
+      "summary": "Thynkbooks, an AI-assisted bank transaction categorization tool that simplified bookkeeping and automated report generation, enabling users to easily view and export tax-ready financial summaries. Designed and delivered the Coppel Employee Training Program, empowering internal e-commerce teams to adopt modern development practices and emerging web technologies, directly contributing to improved site performance and revenue growth.",
+      "highlights": [
+        "Developed Thynkbooks, an AI-assisted bank transaction categorization tool",
+        "Simplified bookkeeping and automated report generation",
+        "Enabled users to easily view and export tax-ready financial summaries",
+        "Designed and delivered the Coppel Employee Training Program",
+        "Empowered internal e-commerce teams to adopt modern development practices and emerging web technologies",
+        "Directly contributed to improved site performance and revenue growth"
+      ]
+    },
+    {
+      "name": "Segundamano (Adevinta Group)",
+      "position": "Front-End Engineer",
+      "url": "https://www.adevinta.com",
+      "startDate": "2015-08-01",
+      "endDate": "2018-09-01",
+      "summary": "Modernized high-traffic classified pages (1M daily users) with lazy-loading, pagination, and SEO-optimized server rendering, improving performance and conversions. Revamped the payment funnel as part of the Payments team, integrating new payment gateways such as PayPal and Conekta, and enhancing the overall checkout experience.",
+      "highlights": [
+        "Modernized high-traffic classified pages (1M daily users)",
+        "Implemented lazy-loading, pagination, and SEO-optimized server rendering",
+        "Improved performance and conversions",
+        "Revamped the payment funnel, integrating new payment gateways such as PayPal and Conekta",
+        "Enhanced the overall checkout experience",
+        "Implemented a virtual coin refund system for users purchasing classified ad boosts",
+        "Increased user retention and payment flexibility",
+        "Onboarded and mentored new developers to standardize development and testing practices across teams",
+        "Developed internal back-office solutions to streamline workflows for customer support, marketing, and sales teams",
+        "Improved operational efficiency and cross-department collaboration"
+      ]
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)",
+      "url": "https://www.tec.mx",
+      "area": "B.S. in Computer Science",
+      "studyType": "Bachelor",
+      "startDate": "",
+      "endDate": "",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "TypeScript",
+      "level": "Advanced",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "JavaScript Superset",
+        "Type Safety"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Advanced",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "ES6+",
+        "Modern JavaScript"
+      ]
+    },
+    {
+      "name": "HTML5",
+      "level": "Advanced",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Markup",
+        "Semantic HTML"
+      ]
+    },
+    {
+      "name": "CSS3",
+      "level": "Advanced",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "SASS",
+        "Responsive Design",
+        "Styling"
+      ]
+    },
+    {
+      "name": "React",
+      "level": "Advanced",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "JavaScript Library",
+        "UI",
+        "Component-based"
+      ]
+    },
+    {
+      "name": "AngularJS",
+      "level": "Advanced",
+      "keywords": [
+        "Web Development",
+        "Frontend",
+        "Legacy Migration",
+        "Framework"
+      ]
+    },
+    {
+      "name": "Vite",
+      "level": "Advanced",
+      "keywords": [
+        "Build Tool",
+        "Frontend",
+        "Development",
+        "Performance"
+      ]
+    },
+    {
+      "name": "Webpack",
+      "level": "Advanced",
+      "keywords": [
+        "Build Tool",
+        "Frontend",
+        "Bundling",
+        "Module Bundler"
+      ]
+    },
+    {
+      "name": "Jest",
+      "level": "Advanced",
+      "keywords": [
+        "Testing",
+        "JavaScript",
+        "Unit Testing",
+        "Test Framework"
+      ]
+    },
+    {
+      "name": "Playwright",
+      "level": "Advanced",
+      "keywords": [
+        "Testing",
+        "E2E Testing",
+        "Automation",
+        "Browser Testing"
+      ]
+    },
+    {
+      "name": "Storybook",
+      "level": "Advanced",
+      "keywords": [
+        "UI Development",
+        "Component Library",
+        "Documentation",
+        "Frontend"
+      ]
+    },
+    {
+      "name": "Chakra UI",
+      "level": "Advanced",
+      "keywords": [
+        "UI Framework",
+        "React",
+        "Component Library",
+        "Design System"
+      ]
+    },
+    {
+      "name": "Tailwind CSS",
+      "level": "Advanced",
+      "keywords": [
+        "CSS Framework",
+        "Utility-first",
+        "Frontend",
+        "Styling"
+      ]
+    },
+    {
+      "name": "Figma",
+      "level": "Intermediate",
+      "keywords": [
+        "Design",
+        "UI/UX",
+        "Prototyping",
+        "Collaboration"
+      ]
+    },
+    {
+      "name": "Snowplow",
+      "level": "Advanced",
+      "keywords": [
+        "Analytics",
+        "Data Collection",
+        "Event Tracking",
+        "Business Intelligence"
+      ]
+    },
+    {
+      "name": "Adobe Analytics",
+      "level": "Advanced",
+      "keywords": [
+        "Analytics",
+        "Web Analytics",
+        "Data Analysis",
+        "Business Intelligence"
+      ]
+    },
+    {
+      "name": "Grafana",
+      "level": "Advanced",
+      "keywords": [
+        "Observability",
+        "Monitoring",
+        "Data Visualization",
+        "Dashboards"
+      ]
+    },
+    {
+      "name": "Datadog RUM",
+      "level": "Advanced",
+      "keywords": [
+        "Observability",
+        "Real User Monitoring",
+        "Error Tracking",
+        "Performance Monitoring"
+      ]
+    },
+    {
+      "name": "OneTrust",
+      "level": "Advanced",
+      "keywords": [
+        "Compliance",
+        "GDPR",
+        "CCPA",
+        "Cookie Consent",
+        "Privacy"
+      ]
+    },
+    {
+      "name": "Jenkins",
+      "level": "Intermediate",
+      "keywords": [
+        "CI/CD",
+        "DevOps",
+        "Automation",
+        "Build Pipeline"
+      ]
+    },
+    {
+      "name": "GitLab CI/CD",
+      "level": "Advanced",
+      "keywords": [
+        "CI/CD",
+        "DevOps",
+        "Automation",
+        "Continuous Integration"
+      ]
+    },
+    {
+      "name": "Docker",
+      "level": "Intermediate",
+      "keywords": [
+        "DevOps",
+        "Containerization",
+        "Deployment",
+        "Infrastructure"
+      ]
+    },
+    {
+      "name": "Feature Flags",
+      "level": "Advanced",
+      "keywords": [
+        "Feature Management",
+        "A/B Testing",
+        "Release Management",
+        "Product Development"
+      ]
+    },
+    {
+      "name": "A/B Testing",
+      "level": "Advanced",
+      "keywords": [
+        "Experimentation",
+        "Product Optimization",
+        "Data-driven Decisions",
+        "Conversion Optimization"
+      ]
+    },
+    {
+      "name": "Git",
+      "level": "Advanced",
+      "keywords": [
+        "Version Control",
+        "Collaboration",
+        "Source Code",
+        "Version Control"
+      ]
+    },
+    {
+      "name": "Node.js",
+      "level": "Advanced",
+      "keywords": [
+        "Backend",
+        "JavaScript",
+        "Server",
+        "Runtime"
+      ]
+    },
+    {
+      "name": "WebRTC",
+      "level": "Intermediate",
+      "keywords": [
+        "Real-time Communication",
+        "Video",
+        "Audio",
+        "P2P"
+      ]
+    },
+    {
+      "name": "Redux",
+      "level": "Advanced",
+      "keywords": [
+        "State Management",
+        "React",
+        "Frontend",
+        "Application State"
+      ]
+    },
+    {
+      "name": "REST APIs",
+      "level": "Advanced",
+      "keywords": [
+        "Backend Integration",
+        "API Development",
+        "HTTP",
+        "Web Services"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "Intermediate",
+      "keywords": [
+        "Database",
+        "SQL",
+        "Data Storage",
+        "Backend"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Spanish",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional Working Proficiency (B1, Distillery Internal Evaluation)"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Web Performance",
+      "keywords": [
+        "Optimization",
+        "Performance Metrics",
+        "Core Web Vitals"
+      ]
+    },
+    {
+      "name": "Product Analytics",
+      "keywords": [
+        "Data Analysis",
+        "Business Intelligence",
+        "User Behavior"
+      ]
+    },
+    {
+      "name": "User Privacy & Consent Systems",
+      "keywords": [
+        "GDPR",
+        "CCPA",
+        "Privacy Compliance",
+        "Cookie Management"
+      ]
+    },
+    {
+      "name": "Scalable SaaS Architectures",
+      "keywords": [
+        "System Design",
+        "Scalability",
+        "Cloud Architecture",
+        "Microservices"
+      ]
+    }
+  ],
+  "references": [],
+  "projects": [
+    {
+      "name": "begodev.io",
+      "isActive": true,
+      "description": "Personal portfolio and professional website. Platform to showcase projects, experience and skills as a front-end developer.",
+      "highlights": [
+        "Minimalist design focused on performance",
+        "Full-stack project portfolio",
+        "Hosted on own VPS"
+      ],
+      "url": "https://begodev.io"
+    },
+    {
+      "name": "Resume",
+      "isActive": true,
+      "description": "Interactive and printable CV/Resume built with Astro. Displays professional experience, technical skills and projects in an elegant and accessible way.",
+      "highlights": [
+        "Interactive and responsive CV",
+        "Optimized for printing",
+        "Based on JSON Resume schema"
+      ],
+      "url": "https://begodev.io/resume"
+    },
+    {
+      "name": "Cronio",
+      "isActive": true,
+      "description": "Smart timer app for workouts. Configure routines with AI using formulas like EMOM, AMRAP or custom intervals. Share your routines with students and friends through unique links.",
+      "highlights": [
+        "Smart gym timer",
+        "AI-powered routine configuration",
+        "Support for EMOM, AMRAP and custom intervals",
+        "Share routines through unique links"
+      ],
+      "url": "https://begodev.io/#apps"
+    },
+    {
+      "name": "Angievaz.shop",
+      "isActive": true,
+      "description": "Complete ecommerce platform with admin panel and web store. Product, inventory, order and payment management. Elegant and feminine design optimized for conversion.",
+      "highlights": [
+        "Full-stack ecommerce",
+        "Complete admin panel",
+        "Inventory and order management",
+        "Conversion-optimized design"
+      ],
+      "url": "https://begodev.io/#apps"
+    }
+  ]
+}
+

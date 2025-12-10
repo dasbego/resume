@@ -1,0 +1,29 @@
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: 1px solid #eee;
+  padding: 4px 8px;
+  height: 32px;
+  border-radius: 6px;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.language-toggle:hover {
+  background: #eee;
+  border: 1px solid #ddd;
+  color: #555;
+}
+
+.language-toggle svg {
+  width: 14px;
+  height: 14px;
+}
+

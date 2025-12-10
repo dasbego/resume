@@ -1,0 +1,284 @@
+/* About Section */
+section[data-section="about"] {
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+section[data-section="about"] h2 {
+  margin-bottom: 8px;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+section[data-section="about"] p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  text-wrap: pretty;
+  font-weight: 400;
+}
+
+/* Experience Section */
+section[data-section="experience"] {
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+section[data-section="experience"] h2 {
+  margin-bottom: 8px;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:global(section[data-section="experience"] ul) {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+:global(section[data-section="experience"] article h3) {
+  font-weight: 500 !important;
+  color: #111 !important;
+  font-size: 1.125rem !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+:global(section[data-section="experience"] article h4) {
+  color: #222 !important;
+  font-weight: 400 !important;
+  font-size: 1rem !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+:global(section[data-section="experience"] article) {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+:global(section[data-section="experience"] header) {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  margin-bottom: 4px !important;
+  gap: 1rem !important;
+}
+
+:global(section[data-section="experience"] header div) {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+:global(section[data-section="experience"] header div h3) {
+  margin-bottom: 0 !important;
+}
+
+:global(section[data-section="experience"] header div h4) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+:global(section[data-section="experience"] time) {
+  color: #555 !important;
+  font-size: 0.85rem !important;
+  white-space: nowrap !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  margin-top: 0 !important;
+  align-self: flex-start !important;
+}
+
+:global(section[data-section="experience"] footer) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+:global(section[data-section="experience"] footer p) {
+  color: #666 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  text-wrap: pretty !important;
+  font-weight: 400 !important;
+}
+
+/* Education Section */
+section[data-section="education"] {
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+section[data-section="education"] h2 {
+  margin-bottom: 8px;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:global(section[data-section="education"] ul) {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+:global(section[data-section="education"] article h3) {
+  font-weight: 500;
+  color: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+
+:global(section[data-section="education"] header) {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+:global(section[data-section="education"] footer p) {
+  color: #666;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  text-wrap: pretty;
+  font-weight: 400;
+}
+
+:global(section[data-section="education"] article h3) {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+/* Projects Section */
+section[data-section="projects"] {
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+section[data-section="projects"] h2 {
+  margin-bottom: 8px;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:global(section[data-section="projects"] ul) {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 1rem !important;
+  margin-inline: -16px !important;
+}
+
+:global(section[data-section="projects"] article) {
+  border-radius: 8px !important;
+  border: 1px solid #f2f2f2 !important;
+  gap: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 16px !important;
+  height: 100% !important;
+}
+
+:global(section[data-section="projects"] article header) {
+  flex: 1 !important;
+  margin-bottom: 0 !important;
+}
+
+:global(section[data-section="projects"] article h3) {
+  margin-bottom: 4px !important;
+  font-weight: 600 !important;
+  font-size: 1.125rem !important;
+  color: #111 !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  margin-top: 0 !important;
+}
+
+:global(section[data-section="projects"] article a) {
+  color: #111 !important;
+  text-decoration: none !important;
+}
+
+:global(section[data-section="projects"] article a:hover) {
+  text-decoration: underline !important;
+}
+
+:global(section[data-section="projects"] article p) {
+  font-size: 0.75rem !important;
+  line-height: 1.2rem !important;
+  margin-bottom: 4px !important;
+  color: #666 !important;
+  text-wrap: pretty !important;
+  font-weight: 400 !important;
+}
+
+:global(section[data-section="projects"] article h3 span) {
+  color: rgb(0, 188, 47) !important;
+}
+
+:global(section[data-section="projects"] footer) {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 4px !important;
+  font-size: 0.6rem !important;
+}
+
+:global(section[data-section="projects"] footer span) {
+  border-radius: 6px !important;
+  background: #eee !important;
+  color: #444 !important;
+  font-size: 0.6rem !important;
+  font-weight: 500 !important;
+  padding: 0.2rem 0.6rem !important;
+}
+
+/* Skills Section */
+section[data-section="skills"] {
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+section[data-section="skills"] h2 {
+  margin-bottom: 8px;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:global(section[data-section="skills"] ul) {
+  display: inline-flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+:global(section[data-section="skills"] li) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+:global(section[data-section="skills"] li span) {
+  border-radius: 6px !important;
+  background: #eee !important;
+  color: black !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  padding: 0.2rem 0.6rem !important;
+  display: inline-block !important;
+}
+

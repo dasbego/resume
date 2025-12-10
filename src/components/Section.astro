@@ -1,9 +1,14 @@
 ---
 // se ejecuta en el servidor o en build time <----
-const { title } = Astro.props
+interface Props {
+  title?: string
+  "data-section"?: string
+}
+
+const { title, "data-section": dataSection } = Astro.props
 ---
 
-<section>
+<section {...(dataSection && { "data-section": dataSection })}>
   {title && <h2>{title}</h2>}
   <slot />
 </section>

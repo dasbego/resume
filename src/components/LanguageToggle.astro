@@ -1,0 +1,256 @@
+---
+import Language from "@/icons/Language.astro"
+---
+
+<button id="language-toggle" class="language-toggle" title="Change language / Cambiar idioma">
+  <Language />
+  <span id="language-label">EN</span>
+</button>
+
+<script>
+  const LANGUAGE_KEY = 'resume-language'
+  const DEFAULT_LANGUAGE = 'en'
+  
+  // Get current language from localStorage or default to English
+  function getCurrentLanguage() {
+    if (typeof window === 'undefined') return DEFAULT_LANGUAGE
+    return localStorage.getItem(LANGUAGE_KEY) || DEFAULT_LANGUAGE
+  }
+  
+  // Set language in localStorage
+  function setLanguage(lang: string) {
+    if (typeof window === 'undefined') return
+    localStorage.setItem(LANGUAGE_KEY, lang)
+  }
+  
+  // Toggle between languages
+  function toggleLanguage() {
+    const currentLang = getCurrentLanguage()
+    const newLang = currentLang === 'en' ? 'es' : 'en'
+    setLanguage(newLang)
+    loadCV(newLang)
+    updateLanguageLabel(newLang)
+    updateHTMLTag(newLang)
+  }
+  
+  // Load CV data based on language
+  async function loadCV(lang: string) {
+    try {
+      const response = await fetch(lang === 'en' ? '/cv.en.json' : '/cv.json')
+      const cvData = await response.json()
+      
+      // Update all sections with new data
+      updatePageContent(cvData, lang)
+    } catch (error) {
+      console.error('Error loading CV:', error)
+    }
+  }
+  
+  // Update page content with new CV data
+  function updatePageContent(cvData: any, lang: string) {
+    // Update basics
+    const nameEl = document.querySelector('h1')
+    if (nameEl) nameEl.textContent = cvData.basics.name
+    
+    const labelEl = document.querySelector('h2')
+    if (labelEl) labelEl.textContent = cvData.basics.label
+    
+    const summaryEl = document.querySelector('section[data-section="about"] p')
+    if (summaryEl) summaryEl.textContent = cvData.basics.summary
+    
+    const cityEl = document.querySelector('[data-location="city"]')
+    if (cityEl) cityEl.textContent = cvData.basics.location.city
+    
+    const regionEl = document.querySelector('[data-location="region"]')
+    if (regionEl) regionEl.textContent = cvData.basics.location.region
+    
+    // Update section titles
+    updateSectionTitle('about', lang === 'en' ? 'About' : 'Sobre mí')
+    updateSectionTitle('experience', lang === 'en' ? 'Work Experience' : 'Experiencia laboral')
+    updateSectionTitle('education', lang === 'en' ? 'Education' : 'Educación')
+    updateSectionTitle('projects', lang === 'en' ? 'Projects' : 'Proyectos')
+    updateSectionTitle('skills', lang === 'en' ? 'Skills' : 'Habilidades')
+    
+    // Update work experience
+    updateWorkExperience(cvData.work, lang)
+    
+    // Update education
+    updateEducation(cvData.education)
+    
+    // Update projects
+    updateProjects(cvData.projects, lang)
+    
+    // Update skills
+    updateSkills(cvData.skills)
+    
+    // Update page title
+    document.title = `${cvData.basics.name} - ${cvData.basics.label}`
+    
+    // Update meta description
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) metaDesc.setAttribute('content', cvData.basics.summary)
+  }
+  
+  function updateSectionTitle(section: string, title: string) {
+    const sectionEl = document.querySelector(`section[data-section="${section}"] h2`)
+    if (sectionEl) sectionEl.textContent = title
+  }
+  
+  function updateWorkExperience(work: any[], lang: string) {
+    const workList = document.querySelector('section[data-section="experience"] ul')
+    if (!workList) return
+    
+    // Build HTML string matching exact structure from Experience.astro component
+    workList.innerHTML = work.map(({ name, startDate, endDate, position, summary }) => {
+      const startYear = new Date(startDate).getFullYear()
+      const endYear = endDate != null ? new Date(endDate).getFullYear() : (lang === 'en' ? 'Present' : 'Actual')
+      const years = `${startYear} - ${endYear}`
+      
+      // Match exact structure from Experience.astro
+      return `<li>
+  <article>
+    <header>
+      <div>
+        <h3>${name}</h3>
+        <h4>${position}</h4>
+      </div>
+
+      <time>${years}</time>
+    </header>
+
+    <footer>
+      <p>${summary}</p>
+    </footer>
+  </article>
+</li>`
+    }).join('')
+  }
+  
+  function updateEducation(education: any[]) {
+    const eduList = document.querySelector('section[data-section="education"] ul')
+    if (!eduList) return
+    
+    eduList.innerHTML = education.map(({ institution, area }) => {
+      return `
+        <li>
+          <article>
+            <header>
+              <div>
+                <h3>${institution}</h3>
+              </div>
+            </header>
+            <footer>
+              <p>${area}</p>
+            </footer>
+          </article>
+        </li>
+      `
+    }).join('')
+  }
+  
+  function updateProjects(projects: any[], lang: string) {
+    const projectsList = document.querySelector('section[data-section="projects"] ul')
+    if (!projectsList) return
+    
+    // Build HTML string matching exact structure from Projects.astro component
+    // This ensures scoped styles apply correctly
+    projectsList.innerHTML = projects.map(({ url, description, highlights, name, isActive }) => {
+      const activeIndicator = isActive ? '<span>•</span>' : ''
+      const highlightsHTML = highlights.map((h: string) => `<span>${h}</span>`).join('')
+      
+      // Match exact structure from Projects.astro
+      return `<li>
+  <article>
+    <header>
+      <h3>
+        <a href="${url}" title="${lang === 'en' ? 'View project' : 'Ver el proyecto'} ${name}">${name}</a>${activeIndicator}
+      </h3>
+      <p>${description}</p>
+    </header>
+    <footer>
+      ${highlightsHTML}
+    </footer>
+  </article>
+</li>`
+    }).join('')
+  }
+  
+  function updateSkills(skills: any[]) {
+    const skillsList = document.querySelector('section[data-section="skills"] ul')
+    if (!skillsList) return
+    
+    // Build HTML string matching exact structure from Skills.astro component
+    // Match exact structure: <li><span>{name}</span></li>
+    skillsList.innerHTML = skills.map(({ name }) => `<li>
+  <span>${name}</span>
+</li>`).join('')
+  }
+  
+  function updateLanguageLabel(lang: string) {
+    const labelEl = document.getElementById('language-label')
+    if (labelEl) labelEl.textContent = lang.toUpperCase()
+  }
+  
+  function updateHTMLTag(lang: string) {
+    document.documentElement.lang = lang === 'en' ? 'en' : 'es'
+  }
+  
+  // Initialize on page load
+  if (typeof window !== 'undefined') {
+    // Wait for DOM to be ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initLanguage)
+    } else {
+      initLanguage()
+    }
+  }
+  
+  function initLanguage() {
+    const currentLang = getCurrentLanguage()
+    updateLanguageLabel(currentLang)
+    updateHTMLTag(currentLang)
+    
+    // Load CV data for current language if it's English (default)
+    if (currentLang === 'en') {
+      loadCV('en')
+    }
+    
+    // Add click handler
+    const toggleBtn = document.getElementById('language-toggle')
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', toggleLanguage)
+    }
+  }
+</script>
+
+<style>
+  .language-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    height: 32px;
+    border-radius: 6px;
+    background: transparent;
+    color: #777;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-family: inherit;
+  }
+  
+  .language-toggle:hover {
+    background: #eee;
+    border: 1px solid #ddd;
+    color: #555;
+  }
+  
+  .language-toggle svg {
+    width: 14px;
+    height: 14px;
+  }
+</style>
+

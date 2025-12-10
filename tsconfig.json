@@ -4,11 +4,13 @@
     "baseUrl": ".",
     "paths": {
       "@cv": [
-        "./cv.json"
+        "./public/cv.json"
       ],
       "@/*": [
         "src/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }
