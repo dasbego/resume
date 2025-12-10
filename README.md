@@ -143,7 +143,7 @@ El sitio puede desplegarse en cualquier plataforma que soporte sitios estáticos
 - **Vercel**: Conecta tu repositorio y despliega automáticamente
 - **Netlify**: Similar a Vercel, despliegue automático
 - **GitHub Pages**: Usa GitHub Actions para build y deploy
-- **VPS propio**: Sube los archivos de `dist/` a tu servidor
+- **VPS propio**: Ver [DEPLOY.md](./DEPLOY.md) para instrucciones completas de despliegue automático con GitHub Actions
 
 ## Arquitectura
 
