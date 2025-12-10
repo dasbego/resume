@@ -26,13 +26,16 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p ${{ secrets.VPS_PORT || 22 }} ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
       - name: Deploy to VPS
-        uses: easingthemes/ssh-deploy@v5
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
-          REMOTE_HOST: ${{ secrets.VPS_HOST }}
-          REMOTE_USER: ${{ secrets.VPS_USER }}
-          REMOTE_PORT: ${{ secrets.VPS_PORT }}
-          SOURCE: "dist/"
-          TARGET: ${{ secrets.VPS_DEPLOY_PATH }}
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.VPS_PORT || 22 }} -o StrictHostKeyChecking=no" \
+            dist/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_DEPLOY_PATH }}/
 
