@@ -90,16 +90,32 @@ server {
 
 ### 1.4 Habilitar el sitio
 
+Después de crear el archivo de configuración, necesitas habilitarlo creando un enlace simbólico:
+
 ```bash
-# Crear enlace simbólico
+# Crear enlace simbólico desde sites-available a sites-enabled
+# Esto "activa" la configuración del sitio
 sudo ln -s /etc/nginx/sites-available/resume /etc/nginx/sites-enabled/
 
-# Verificar configuración
-sudo nginx -t
+# Verificar que el enlace se creó correctamente
+ls -la /etc/nginx/sites-enabled/ | grep resume
+# Deberías ver algo como: resume -> /etc/nginx/sites-available/resume
 
-# Reiniciar Nginx
+# Verificar que la configuración de Nginx es válida (sin errores)
+sudo nginx -t
+# Si todo está bien, verás: "nginx: configuration file /etc/nginx/nginx.conf test is successful"
+
+# Si hay errores, corrígelos antes de continuar
+
+# Reiniciar Nginx para aplicar los cambios
 sudo systemctl restart nginx
+
+# Verificar que Nginx está corriendo correctamente
+sudo systemctl status nginx
+# Deberías ver "active (running)" en verde
 ```
+
+**Nota importante**: Si estás usando una distribución que no tiene la estructura `sites-available/sites-enabled` (como algunas versiones de CentOS), puedes agregar la configuración directamente en `/etc/nginx/conf.d/resume.conf` y luego reiniciar Nginx.
 
 ### 1.5 Configurar firewall (si es necesario)
 
