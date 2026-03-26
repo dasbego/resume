@@ -424,6 +424,28 @@ const { image, summary } = basics
     }
   }
 
+  @media (max-width: 600px) {
+    section[data-section="experience"] header {
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+
+    section[data-section="experience"] time {
+      white-space: normal;
+      font-size: 0.8rem;
+    }
+
+    section[data-section="education"] header {
+      flex-direction: column;
+      gap: 0.125rem;
+    }
+
+    section[data-section="projects"] ul {
+      grid-template-columns: 1fr;
+      margin-inline: 0;
+    }
+  }
+
   @media print {
     section[data-section="projects"] ul {
       display: flex;

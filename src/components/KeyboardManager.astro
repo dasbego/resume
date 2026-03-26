@@ -123,6 +123,16 @@ const profilesInfo = profiles.map(({ network, url }) => {
     }
   }
 
+  @media (max-width: 600px) {
+    footer {
+      display: none !important;
+    }
+
+    ninja-keys {
+      display: none !important;
+    }
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;

@@ -88,6 +88,34 @@
   display: block;
 }
 
+@media (max-width: 600px) {
+  .hero-container {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 32px;
+  }
+
+  .hero-info {
+    padding-right: 0;
+  }
+
+  .hero-info h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-info h2 {
+    font-size: 0.9rem;
+  }
+
+  .hero-container figure img {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+  }
+}
+
 @media print {
   .no-print {
     display: none !important;
