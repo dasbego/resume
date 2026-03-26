@@ -6,7 +6,7 @@
     "email": "gbego91@gmail.com",
     "phone": "+52 5544491603",
     "url": "https://begodev.io",
-    "summary": "Front-End Engineer with 10+ years building high-traffic web applications (1M+ daily users) for SaaS, travel, and classifieds platforms. Specialized in React, legacy system migrations, performance optimization, and product observability. Proven track record leading migrations that cut build times by 30+ minutes and enabled 1,000+ additional daily bookings. Cross-functional experience with product, design, backend, and analytics teams.",
+    "summary": "Front-End Engineer with 11+ years building high-traffic web applications (1M+ daily users) for SaaS, travel, and classifieds platforms. Specialized in React, legacy system migrations, performance optimization, and product observability. Proven track record leading migrations that cut build times by 30+ minutes and enabled 1,000+ additional daily bookings. Cross-functional experience with product, design, backend, and analytics teams.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -95,8 +95,8 @@
       "url": "https://www.tec.mx",
       "area": "B.S. in Computer Science",
       "studyType": "Bachelor",
-      "startDate": "",
-      "endDate": "",
+      "startDate": "2009-08-01",
+      "endDate": "2014-05-01",
       "score": "",
       "courses": []
     }

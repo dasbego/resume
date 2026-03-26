@@ -24,6 +24,29 @@ const sectionTitles = {
   },
 };
 
+const skillGroups = {
+  en: [
+    { label: 'Languages', skills: ['TypeScript', 'JavaScript', 'HTML5', 'CSS3'] },
+    { label: 'Frameworks & Tools', skills: ['React', 'Next.js', 'Astro', 'AngularJS', 'Vite', 'Webpack', 'Redux', 'Node.js'] },
+    { label: 'Testing & UI', skills: ['Jest', 'Playwright', 'Storybook', 'Chakra UI', 'Tailwind CSS', 'Figma'] },
+    { label: 'Analytics & Observability', skills: ['Snowplow', 'Adobe Analytics', 'Grafana', 'Datadog RUM'] },
+    { label: 'Compliance & Consent', skills: ['OneTrust', 'CCPA & GDPR Compliance'] },
+    { label: 'DevOps & Infrastructure', skills: ['GitLab CI/CD', 'Jenkins', 'Docker', 'Feature Flags', 'A/B Testing', 'Git'] },
+    { label: 'Backend & Data', skills: ['Supabase', 'PostgreSQL', 'REST APIs', 'WebRTC'] },
+    { label: 'AI', skills: ['AI/LLM Integration'] },
+  ],
+  es: [
+    { label: 'Lenguajes', skills: ['TypeScript', 'JavaScript', 'HTML5', 'CSS3'] },
+    { label: 'Frameworks y Herramientas', skills: ['React', 'Next.js', 'Astro', 'AngularJS', 'Vite', 'Webpack', 'Redux', 'Node.js'] },
+    { label: 'Testing y UI', skills: ['Jest', 'Playwright', 'Storybook', 'Chakra UI', 'Tailwind CSS', 'Figma'] },
+    { label: 'Analytics y Observabilidad', skills: ['Snowplow', 'Adobe Analytics', 'Grafana', 'Datadog RUM'] },
+    { label: 'Compliance y Consentimiento', skills: ['OneTrust', 'CCPA & GDPR Compliance'] },
+    { label: 'DevOps e Infraestructura', skills: ['GitLab CI/CD', 'Jenkins', 'Docker', 'Feature Flags', 'A/B Testing', 'Git'] },
+    { label: 'Backend y Datos', skills: ['Supabase', 'PostgreSQL', 'REST APIs', 'WebRTC'] },
+    { label: 'IA', skills: ['AI/LLM Integration'] },
+  ],
+};
+
 export default function ResumeContent({ cvEs, cvEn }: ResumeContentProps) {
   const { language } = useLanguage();
   const cv = language === 'en' ? cvEn : cvEs;
@@ -31,8 +54,11 @@ export default function ResumeContent({ cvEs, cvEn }: ResumeContentProps) {
 
   const formatDate = (dateStr: string | null): string => {
     if (!dateStr) return language === 'en' ? 'Present' : 'Actual';
-    const date = new Date(dateStr);
-    return date.getFullYear().toString();
+    const [year, month] = dateStr.split('-').map(Number);
+    const monthNames = language === 'en'
+      ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      : ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+    return `${monthNames[month - 1]} ${year}`;
   };
 
   return (
@@ -76,20 +102,26 @@ export default function ResumeContent({ cvEs, cvEn }: ResumeContentProps) {
       <section data-section="education">
         <h2>{titles.education}</h2>
         <ul>
-          {cv.education.map((edu, index) => (
+          {cv.education.map((edu, index) => {
+            const eduYears = edu.startDate && edu.endDate
+              ? `${formatDate(edu.startDate)} - ${formatDate(edu.endDate)}`
+              : '';
+            return (
             <li key={index}>
               <article>
                 <header>
                   <div>
                     <h3>{edu.institution}</h3>
                   </div>
+                  {eduYears && <time>{eduYears}</time>}
                 </header>
                 <footer>
                   <p>{edu.area}</p>
                 </footer>
               </article>
             </li>
-          ))}
+          );
+          })}
         </ul>
       </section>
 
@@ -123,8 +155,8 @@ export default function ResumeContent({ cvEs, cvEn }: ResumeContentProps) {
         </ul>
       </section>
 
-      {/* Skills Section */}
-      <section data-section="skills">
+      {/* Skills Section — badges (screen) */}
+      <section data-section="skills" class="no-print">
         <h2>{titles.skills}</h2>
         <ul>
           {cv.skills.map((skill) => (
@@ -133,6 +165,19 @@ export default function ResumeContent({ cvEs, cvEn }: ResumeContentProps) {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Skills Section — grouped text (print only) */}
+      <section data-section="skills-print" class="print">
+        <h2>{titles.skills}</h2>
+        <dl>
+          {skillGroups[language].map((group) => (
+            <div key={group.label} class="skill-group">
+              <dt>{group.label}:</dt>
+              <dd>{group.skills.join(', ')}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
     </>
   );
