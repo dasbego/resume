@@ -14,7 +14,7 @@ Un CV/Resume interactivo y bilingüe (Español/Inglés) construido con Astro y P
 
 ## Tecnologías
 
-- **Astro 4.x**: Framework web moderno con Islands Architecture
+- **Astro 6.x**: Framework web moderno con Islands Architecture
 - **Preact**: Biblioteca ligera (~3KB) para interactividad
 - **TypeScript**: Tipado estático para mejor desarrollo
 - **JSON Resume Schema**: Formato estándar para datos del CV
@@ -22,7 +22,7 @@ Un CV/Resume interactivo y bilingüe (Español/Inglés) construido con Astro y P
 ## Requisitos
 
 - **Node.js**: LTS version (20.x o 22.x recomendado)
-- **npm** o **pnpm**: Gestor de paquetes
+- **npm**: Gestor de paquetes
 
 ## Instalación
 
@@ -35,15 +35,11 @@ cd resume
 2. Instala las dependencias:
 ```bash
 npm install
-# o
-pnpm install
 ```
 
 3. Inicia el servidor de desarrollo:
 ```bash
 npm run dev
-# o
-pnpm dev
 ```
 
 El sitio estará disponible en `http://localhost:4321`
