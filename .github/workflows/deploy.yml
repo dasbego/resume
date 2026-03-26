@@ -28,15 +28,38 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Setup SSH
+      - name: Setup SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.VPS_SSH_KEY }}
+
+      - name: Add VPS to known hosts
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p ${{ secrets.VPS_PORT || 22 }} ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p ${{ secrets.VPS_PORT || 22 }} -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Create deployment directory
+        run: |
+          ssh -p ${{ secrets.VPS_PORT || 22 }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+            if [ ! -d "${{ secrets.VPS_DEPLOY_PATH }}" ]; then
+              sudo mkdir -p "${{ secrets.VPS_DEPLOY_PATH }}"
+              sudo chown -R $USER:$USER "${{ secrets.VPS_DEPLOY_PATH }}"
+            fi
+          EOF
 
       - name: Deploy to VPS
         run: |
           rsync -avz --delete \
-            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.VPS_PORT || 22 }} -o StrictHostKeyChecking=no" \
+            -e "ssh -p ${{ secrets.VPS_PORT || 22 }}" \
             dist/ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_DEPLOY_PATH }}/
+
+      - name: Set directory permissions
+        run: |
+          ssh -p ${{ secrets.VPS_PORT || 22 }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+            sudo chown -R www-data:www-data "${{ secrets.VPS_DEPLOY_PATH }}" || sudo chown -R $USER:$USER "${{ secrets.VPS_DEPLOY_PATH }}"
+            sudo chmod -R 755 "${{ secrets.VPS_DEPLOY_PATH }}"
+          EOF
+
+      - name: Verify deployment
+        run: |
+          curl -I --retry 3 --retry-connrefused --max-time 15 https://resume.begodev.io
