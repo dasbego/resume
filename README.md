@@ -52,7 +52,7 @@ resume/
 │   ├── cv.json            # CV en español (accesible públicamente)
 │   ├── cv.en.json         # CV en inglés (accesible públicamente)
 │   ├── preview_resume_photo.png
-│   └── Guillermo_Beltran_Resume_2025.pdf
+│   └── [TU_ARCHIVO_PDF].pdf
 ├── src/
 │   ├── components/
 │   │   ├── Hero.tsx       # Componente Hero (Preact)
@@ -100,7 +100,7 @@ Edita los archivos `cv.json` (español) y `cv.en.json` (inglés) siguiendo el [J
 
 ### Actualizar el PDF
 
-Reemplaza `public/Guillermo_Beltran_Resume_2025.pdf` con tu CV en PDF.
+Reemplaza `public/[TU_ARCHIVO_PDF].pdf` con tu CV en PDF.
 
 ## Sistema de Idiomas
 

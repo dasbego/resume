@@ -46,8 +46,8 @@ export default function Hero({ cvEs, cvEn }: HeroProps) {
           <footer className="no-print">
             <LanguageToggle />
             <a
-              href="/Guillermo_Beltran_Resume_2025.pdf"
-              download="Guillermo_Beltran_Resume_2025.pdf"
+              href="/Guillermo_Beltran_Resume_2026.pdf"
+              download="Guillermo_Beltran_Resume_2026.pdf"
               title="Download Resume PDF / Descargar CV en PDF"
               className="download-btn"
             >
